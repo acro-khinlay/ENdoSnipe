@@ -36,7 +36,7 @@ import jp.co.acroquest.endosnipe.web.explorer.constants.LogMessageCodes;
 import net.arnx.jsonic.JSON;
 
 /**
- * WebDashboardに通知するための共通処理を持つクラス。
+ * WebExplorerに通知するための共通処理を持つクラス。
  * @author s-nakagawa
  *
  */

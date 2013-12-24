@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper
-	namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.PropertySettingDao">
+	namespace="jp.co.acroquest.endosnipe.web.explorer.dao.PropertySettingDao">
 	<resultMap id="ReportDefinitionMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.PropertySettingDefinition">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.PropertySettingDefinition">
 		<result property="key_" column="PROPERTY_SETTING_KEY" />
 		<result property="value_" column="PROPERTY_SETTING_VALUE" />
 	</resultMap>

@@ -12,7 +12,7 @@
 				<img src="<%=request.getContextPath()%>/resources/images/ENdoSnipe_logo.png" />
 			</td>
 			<td style="float:right;">
-				<a href="<%=request.getContextPath()%>/">Dashboard</a>
+				<a href="<%=request.getContextPath()%>/">Explorer</a>
 				<a href="<%=request.getContextPath()%>/map/mapList">Map</a>
 			</td>
 		</tr>

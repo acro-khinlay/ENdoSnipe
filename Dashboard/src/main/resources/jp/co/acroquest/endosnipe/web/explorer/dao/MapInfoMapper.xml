@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.MapInfoDao">
+<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.MapInfoDao">
 	<resultMap id="MapInfoMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.MapInfo">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
 		<id property="mapId" column="MAP_ID" />
 		<result property="name" column="NAME" />
 		<result property="data" column="DATA" />
@@ -29,7 +29,7 @@
 	</select>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
 		insert into MAP_INFO
 		(NAME,DATA,LAST_UPDATE)
 		values
@@ -37,7 +37,7 @@
 	</insert>
 
 	<update id="update"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
 		update MAP_INFO set
 		NAME = #{name},
 		DATA = #{data},
@@ -53,7 +53,7 @@
 	</delete>
 
 	<delete id="deleteAll"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
 		delete from MAP_INFO
 	</delete>
 

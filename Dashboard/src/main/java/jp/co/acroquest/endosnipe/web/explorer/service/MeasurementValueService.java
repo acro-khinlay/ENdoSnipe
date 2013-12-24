@@ -91,7 +91,7 @@ public class MeasurementValueService
                 List<jp.co.acroquest.endosnipe.data.dto.MeasurementValueDto> queryResultList =
                         MeasurementValueDao.selectByTermAndMeasurementItemName(dbName, starttime,
                                                                                endtime, itemName);
-                exchangeToDashboardDto(queryResultList, valueList);
+                exchangeToExplorerDto(queryResultList, valueList);
             }
             catch (SQLException ex)
             {
@@ -103,28 +103,28 @@ public class MeasurementValueService
     }
 
     /**
-     * DataAccesesorを使ってDBから取得した計測値の情報を、Dashboard用のDTOに詰め替える。
+     * DataAccesesorを使ってDBから取得した計測値の情報を、Explorer用のDTOに詰め替える。
      * 
-     * @param dashboardDtoList Dashboard用のDTOのリスト。
+     * @param explorerDtoList Explorer用のDTOのリスト。
      * @param queryResultList DBから取得した計測値のリスト。
      */
-    private void exchangeToDashboardDto(
+    private void exchangeToExplorerDto(
             final List<jp.co.acroquest.endosnipe.data.dto.MeasurementValueDto> queryResultList,
-            final List<MeasurementValueDto> dashboardDtoList)
+            final List<MeasurementValueDto> explorerDtoList)
     {
-        if (dashboardDtoList == null || queryResultList == null)
+        if (explorerDtoList == null || queryResultList == null)
         {
             return;
         }
 
         for (jp.co.acroquest.endosnipe.data.dto.MeasurementValueDto queryDto : queryResultList)
         {
-            MeasurementValueDto dashboardDto = new MeasurementValueDto();
-            dashboardDto.setMeasurementItemId(queryDto.measurementItemId);
-            dashboardDto.setMeasurementItemName(queryDto.measurementItemName);
-            dashboardDto.setMeasurementTime(queryDto.measurementTime.getTime());
-            dashboardDto.setMeasurementValue(queryDto.value);
-            dashboardDtoList.add(dashboardDto);
+            MeasurementValueDto explorerDto = new MeasurementValueDto();
+            explorerDto.setMeasurementItemId(queryDto.measurementItemId);
+            explorerDto.setMeasurementItemName(queryDto.measurementItemName);
+            explorerDto.setMeasurementTime(queryDto.measurementTime.getTime());
+            explorerDto.setMeasurementValue(queryDto.value);
+            explorerDtoList.add(explorerDto);
         }
     }
 }

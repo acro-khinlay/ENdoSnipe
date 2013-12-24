@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.MultipleResourceGraphInfoDao">
+<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.MultipleResourceGraphInfoDao">
 	<resultMap id="MultipleResourceGraphInfoMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.MultipleResourceGraphInfo">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.MultipleResourceGraphInfo">
 		<id property="multipleResourceGraphId_" column="MULTIPLE_RESOURCE_GRAPH_ID" />
 		<result property="multipleResourceGraphName_" column="MULTIPLE_RESOURCE_GRAPH_NAME" />
 		<result property="measurementItemIdList_" column="MEASUREMENT_ITEM_ID_LIST" />
@@ -30,7 +30,7 @@
 	</select>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MultipleResourceGraphInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MultipleResourceGraphInfo">
 		insert into MULTIPLE_RESOURCE_GRAPH
 		(MULTIPLE_RESOURCE_GRAPH_NAME,MEASUREMENT_ITEM_ID_LIST)
 		values
@@ -38,7 +38,7 @@
 	</insert>
 
 	<update id="update"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MultipleResourceGraphInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MultipleResourceGraphInfo">
 		update MULTIPLE_RESOURCE_GRAPH set
 		MULTIPLE_RESOURCE_GRAPH_NAME = #{multipleResourceGraphName_},
 		MEASUREMENT_ITEM_ID_LIST = #{measurementItemIdList_}
@@ -53,7 +53,7 @@
 	</delete>
 
 	<delete id="deleteAll"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.MultipleResourceGraphInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MultipleResourceGraphInfo">
 		delete from MULTIPLE_RESOURCE_GRAPH
 	</delete>
 

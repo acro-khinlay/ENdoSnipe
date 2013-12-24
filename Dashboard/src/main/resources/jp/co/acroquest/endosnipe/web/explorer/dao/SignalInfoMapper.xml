@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.SignalInfoDao">
+<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.SignalInfoDao">
 	<resultMap id="SignalInfoMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.SignalInfo">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.SignalInfo">
 		<id property="signalId" column="SIGNAL_ID" />
 		<result property="signalName" column="SIGNAL_NAME" />
 		<result property="matchingPattern" column="matching_pattern" />
@@ -33,7 +33,7 @@
 	</select>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SignalInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SignalInfo">
 		insert into SIGNAL_DEFINITION
 		(SIGNAL_NAME,MATCHING_PATTERN,LEVEL,PATTERN_VALUE,ESCALATION_PERIOD)
 		values
@@ -41,7 +41,7 @@
 	</insert>
 
 	<update id="update"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SignalInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SignalInfo">
 		update SIGNAL_DEFINITION set
 		SIGNAL_NAME = #{signalName},
 		MATCHING_PATTERN = #{matchingPattern},
@@ -60,7 +60,7 @@
 	</delete>
 
 	<delete id="deleteAll"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SignalInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SignalInfo">
 		delete from SIGNAL_DEFINITION
 	</delete>
 

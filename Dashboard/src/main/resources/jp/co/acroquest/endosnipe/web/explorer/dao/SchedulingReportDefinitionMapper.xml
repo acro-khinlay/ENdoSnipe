@@ -4,9 +4,9 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper
-	namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.SchedulingReportDefinitionDao">
+	namespace="jp.co.acroquest.endosnipe.web.explorer.dao.SchedulingReportDefinitionDao">
 	<resultMap id="SchedulingReportDefinitionMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.SchedulingReportDefinition">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.SchedulingReportDefinition">
 		<id property="reportId_" column="REPORT_ID" />
 		<result property="reportName_" column="REPORT_NAME" />
 		<result property="targetMeasurementName_" column="TARGET_MEASUREMENT_NAME" />
@@ -18,7 +18,7 @@
 	</resultMap>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SchedulingReportDefinition">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SchedulingReportDefinition">
 		<if test="term_.equals('DAILY')">
 			insert into SCHEDULING_REPORT_DEFINITION
 			(REPORT_NAME,TARGET_MEASUREMENT_NAME,SCHEDULE_TERM,SCHEDULE_TIME,PLAN_EXPORT_REPORT_TIME)
@@ -55,7 +55,7 @@
 	</select>
 
 	<update id="update"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SchedulingReportDefinition">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SchedulingReportDefinition">
 
 		<if test="term_.equals('DAILY')">
 			update SCHEDULING_REPORT_DEFINITION set

@@ -48,12 +48,12 @@ public class GraphConfigSetingProcessor implements EventProcessor, EventConstant
     }
 
     /* (non-Javadoc)
-     * @see jp.co.acroquest.endosnipe.web.dashboard.service.processor.EventProcessor#process(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
+     * @see jp.co.acroquest.endosnipe.web.explorer.service.processor.EventProcessor#process(javax.servlet.http.HttpServletRequest, javax.servlet.http.HttpServletResponse)
      */
-    public void process(HttpServletRequest request, HttpServletResponse response)
+    public void process(final HttpServletRequest request, final HttpServletResponse response)
     {
         //Graph
-        
+
     }
 
 }

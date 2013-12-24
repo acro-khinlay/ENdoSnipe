@@ -66,7 +66,7 @@ public class SignalStateChangeListener extends AbstractTelegramListener
         Body[] resourceAlarmBodys = telegram.getObjBody();
 
         // DataCollectorから送信された電文から、
-        // Dashboardのクライアントに通知するためのイベントを作成する。
+        // Explorerのクライアントに通知するためのイベントを作成する。
         String[] treeIds = null;
         long[] signalIds = null;
         int[] signalValues = null;

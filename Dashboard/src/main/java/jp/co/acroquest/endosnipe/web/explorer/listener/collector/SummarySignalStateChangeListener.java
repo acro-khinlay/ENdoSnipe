@@ -29,7 +29,7 @@ import jp.co.acroquest.endosnipe.web.explorer.manager.ResourceSender;
 import org.wgp.manager.WgpDataManager;
 
 /**
- * Accept telegram from the DataCollector to Dashboard
+ * Accept telegram from the DataCollector to Explorer
  * @author pin
  *
  */

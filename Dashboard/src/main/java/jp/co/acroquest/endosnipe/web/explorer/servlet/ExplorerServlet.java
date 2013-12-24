@@ -107,7 +107,7 @@ public class ExplorerServlet extends HttpServlet
         }
         ApplicationContext context =
                 new ClassPathXmlApplicationContext(
-                                                   "jp/co/acroquest/endosnipe/web/dashboard/quartz/propertySetting-quartz.xml");
+                                                   "jp/co/acroquest/endosnipe/web/explorer/quartz/propertySetting-quartz.xml");
         // client modeの場合、設定ファイルのエージェントごとに、threadを作成する
         if ("client".equals(dbConfig.getConnectionMode()))
         {

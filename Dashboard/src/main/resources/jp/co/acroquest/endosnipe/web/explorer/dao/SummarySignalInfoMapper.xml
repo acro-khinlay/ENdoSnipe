@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper
-	namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.SummarySignalInfoDao">
+	namespace="jp.co.acroquest.endosnipe.web.explorer.dao.SummarySignalInfoDao">
 	<resultMap id="SummarySignalInfoMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.SummarySignalInfo">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.SummarySignalInfo">
 		<id property="summarySignalId" column="SUMMARY_SIGNAL_ID" />
 		<result property="summarySignalName" column="SUMMARY_SIGNAL_NAME" />
 		<result property="targetSignalId" column="TARGET_SIGNAL_ID" />
@@ -26,7 +26,7 @@
 	</select>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.dashboard.entity.SummarySignalInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.SummarySignalInfo">
 		insert into SUMMARY_SIGNAL_DEFINITION
 		(SUMMARY_SIGNAL_NAME,TARGET_SIGNAL_ID,SIGNAL_TYPE,PRIORITY_NO)
 		values

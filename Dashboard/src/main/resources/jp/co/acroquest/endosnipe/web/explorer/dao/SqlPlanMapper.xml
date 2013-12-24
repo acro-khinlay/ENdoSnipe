@@ -3,9 +3,9 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="jp.co.acroquest.endosnipe.web.dashboard.dao.SqlPlanDao">
+<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.SqlPlanDao">
 	<resultMap id="SqlPlanMap"
-		type="jp.co.acroquest.endosnipe.web.dashboard.entity.SqlPlan">
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.SqlPlan">
 		<result property="measurementItemName" column="MEASUREMENT_ITEM_NAME" />
 		<result property="sqlStatement" column="SQL_STATEMENT" />
 		<result property="executionPlan" column="EXECUTION_PLAN" />

@@ -45,7 +45,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.wgp.manager.WgpDataManager;
 
 /**
- * Dashboard用のコントローラークラスです。
+ * Explorer用のコントローラークラスです。
  * 
  * @author miyasaka
  *
@@ -108,7 +108,7 @@ public class ExplorerController
                 break;
             }
         }
-        ModelAndView modelAndView = new ModelAndView("Dashboard");
+        ModelAndView modelAndView = new ModelAndView("Explorer");
         modelAndView.addObject("connect", connect);
         return modelAndView;
     }

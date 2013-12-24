@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
  
-	<bean id="runMeTask" class="jp.co.acroquest.endosnipe.web.dashboard.service.ReportScheduleService" />
+	<bean id="runMeTask" class="jp.co.acroquest.endosnipe.web.explorer.service.ReportScheduleService" />
  
 	<!-- Spring Quartz -->
 	<bean name="runMeJob" class="org.springframework.scheduling.quartz.JobDetailBean">
  
-		<property name="jobClass" value="jp.co.acroquest.endosnipe.web.dashboard.service.ReportTimerTask" />
+		<property name="jobClass" value="jp.co.acroquest.endosnipe.web.explorer.service.ReportTimerTask" />
  
 		<property name="jobDataAsMap">
 		  <map>

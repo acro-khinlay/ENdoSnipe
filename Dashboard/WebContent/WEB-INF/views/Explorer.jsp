@@ -4,7 +4,7 @@
 <html>
 <head>
 <%@ include file="../include/ext/javaScriptInclude.jsp"%>
-<%@ include file="../include/DashboardInclude.jsp"%>
+<%@ include file="../include/ExplorerInclude.jsp"%>
 <%@ include file="common/Header.jsp"%>
 <%@ include file="dialog/SignalDialog.jsp"%>
 <%@ include file="dialog/MultipleResourceGraphDialog.jsp"%>
@@ -14,7 +14,7 @@
 <%@ include file="dialog/threadDumpDialog.jsp"%>
 <%@ include file="dialog/SummarySignalDialog.jsp"%>
 
-<title>ENdoSnipe Dashboard</title>
+<title>ENdoSnipe Explorer</title>
 </head>
 <body id="main" oncontextmenu="return false;" onload="self.focus();">
 

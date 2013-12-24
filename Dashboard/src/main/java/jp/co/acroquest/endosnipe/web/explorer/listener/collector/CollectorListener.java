@@ -96,7 +96,7 @@ public class CollectorListener implements TelegramListener
         if (header.getByteTelegramKind() == TelegramConstants.BYTE_TELEGRAM_KIND_RESOURCENOTIFY
                 && header.getByteRequestKind() == TelegramConstants.BYTE_REQUEST_KIND_RESPONSE)
         {
-            // DataCollector側でエージェント名を設定するため、Dashboardではエージェント名に空文字を指定する。
+            // DataCollector側でエージェント名を設定するため、lではエージェント名に空文字を指定する。
             ResourceData resourceData =
                     ResourceNotifyAccessor.createResourceData(telegram, this.databaseName_, "");
 
