@@ -38,9 +38,9 @@ import jp.co.acroquest.endosnipe.common.logger.ENdoSnipeLogger;
 import jp.co.acroquest.endosnipe.common.util.MessageUtil;
 import jp.co.acroquest.endosnipe.web.explorer.constants.LogMessageCodes;
 import jp.co.acroquest.endosnipe.web.explorer.constants.ResponseConstants;
-import jp.co.acroquest.endosnipe.web.explorer.dao.MapInfoDao;
+import jp.co.acroquest.endosnipe.web.explorer.dao.DashboardInfoDao;
 import jp.co.acroquest.endosnipe.web.explorer.dto.ResponseDto;
-import jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo;
+import jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo;
 
 import org.apache.ibatis.exceptions.PersistenceException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -48,26 +48,26 @@ import org.springframework.dao.DuplicateKeyException;
 import org.springframework.stereotype.Service;
 
 /**
- * Map用サービスクラス。
+ * Dashboard用サービスクラス。
  *
  * @author fujii
  */
 @Service
-public class MapService
+public class DashboardService
 {
     /** ロガー */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /**
      * マップ情報Dao
      */
     @Autowired
-    protected MapInfoDao mapInfoDao_;
+    protected DashboardInfoDao mapInfoDao_;
 
     /**
      * コンストラクタ
      */
-    public MapService()
+    public DashboardService()
     {
 
     }
@@ -79,7 +79,7 @@ public class MapService
      */
     public List<Map<String, String>> getAllMap()
     {
-        List<MapInfo> mapList = null;
+        List<DashboardInfo> mapList = null;
         try
         {
             mapList = mapInfoDao_.selectAll();
@@ -97,7 +97,7 @@ public class MapService
         }
 
         List<Map<String, String>> resultList = new ArrayList<Map<String, String>>();
-        for (MapInfo mapInfo : mapList)
+        for (DashboardInfo mapInfo : mapList)
         {
             Map<String, String> dataMap = this.convertDataMap(mapInfo);
             resultList.add(dataMap);
@@ -110,7 +110,7 @@ public class MapService
      * @param mapInfo 登録するマップ情報
      * @return 登録結果電文
      */
-    public ResponseDto insert(final MapInfo mapInfo)
+    public ResponseDto insert(final DashboardInfo mapInfo)
     {
         ResponseDto responseDto = new ResponseDto();
         if (getByName(mapInfo.name).size() > 0)
@@ -156,7 +156,7 @@ public class MapService
      * @param mapInfo マップ情報
      * @return 更新結果電文
      */
-    public ResponseDto update(final MapInfo mapInfo)
+    public ResponseDto update(final DashboardInfo mapInfo)
     {
         // 最終更新日時を設定
         mapInfo.lastUpdate = new Timestamp(Calendar.getInstance().getTimeInMillis());
@@ -208,7 +208,7 @@ public class MapService
         ResponseDto responseDto = new ResponseDto();
         try
         {
-            MapInfo mapInfo = mapInfoDao_.selectById(mapId);
+            DashboardInfo mapInfo = mapInfoDao_.selectById(mapId);
             if (mapInfo == null)
             {
                 String errorMessage = MessageUtil.getMessage("WEWD0164", new Object[] {});
@@ -248,7 +248,7 @@ public class MapService
      * @param name マップ名
      * @return 取得結果
      */
-    public List<MapInfo> getByName(final String name)
+    public List<DashboardInfo> getByName(final String name)
     {
         try
         {
@@ -266,7 +266,7 @@ public class MapService
             {
                 LOGGER.log(LogMessageCodes.SQL_EXCEPTION, pEx, pEx.getMessage());
             }
-            return new ArrayList<MapInfo>();
+            return new ArrayList<DashboardInfo>();
         }
     }
 
@@ -275,7 +275,7 @@ public class MapService
      * @param mapId マップID
      * @return 削除結果
      */
-    public ResponseDto removeMapById(final long mapId)
+    public ResponseDto removeDashboardById(final long mapId)
     {
         int count = 0;
         ResponseDto responseDto = new ResponseDto();
@@ -314,11 +314,11 @@ public class MapService
     }
 
     /**
-     * マップ情報をMap形式に変換する。
+     * マップ情報をDashboard形式に変換する。
      * @param mapInfo マップ情報
-     * @return Map形式のマップ情報
+     * @return Dashboard形式のマップ情報
      */
-    private Map<String, String> convertDataMap(final MapInfo mapInfo)
+    private Map<String, String> convertDataMap(final DashboardInfo mapInfo)
     {
         Map<String, String> dataMap = new HashMap<String, String>();
         dataMap.put("id", String.valueOf(mapInfo.mapId));

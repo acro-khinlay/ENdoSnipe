@@ -3,33 +3,33 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.MapInfoDao">
-	<resultMap id="MapInfoMap"
-		type="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
+<mapper namespace="jp.co.acroquest.endosnipe.web.explorer.dao.DashboardInfoDao">
+	<resultMap id="DashboardInfoMap"
+		type="jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo">
 		<id property="mapId" column="MAP_ID" />
 		<result property="name" column="NAME" />
 		<result property="data" column="DATA" />
 		<result property="lastUpdate" column="LAST_UPDATE" />
 	</resultMap>
 
-	<select id="selectAll" resultMap="MapInfoMap">
+	<select id="selectAll" resultMap="DashboardInfoMap">
 		select * from MAP_INFO order by MAP_ID
 	</select>
 
-	<select id="selectById" resultMap="MapInfoMap">
+	<select id="selectById" resultMap="DashboardInfoMap">
 		select * from MAP_INFO
 		where MAP_ID
 		= #{mapId}
 	</select>
 
-	<select id="selectByName" resultMap="MapInfoMap">
+	<select id="selectByName" resultMap="DashboardInfoMap">
 		select * from MAP_INFO
 		where NAME
 		= #{name}
 	</select>
 
 	<insert id="insert"
-		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo">
 		insert into MAP_INFO
 		(NAME,DATA,LAST_UPDATE)
 		values
@@ -37,7 +37,7 @@
 	</insert>
 
 	<update id="update"
-		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo">
 		update MAP_INFO set
 		NAME = #{name},
 		DATA = #{data},
@@ -53,7 +53,7 @@
 	</delete>
 
 	<delete id="deleteAll"
-		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo">
+		parameterType="jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo">
 		delete from MAP_INFO
 	</delete>
 

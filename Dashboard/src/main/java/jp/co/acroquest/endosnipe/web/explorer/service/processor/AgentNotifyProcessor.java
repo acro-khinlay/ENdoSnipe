@@ -66,7 +66,8 @@ public class AgentNotifyProcessor implements EventProcessor, EventConstants
      */
     public void process(final HttpServletRequest request, final HttpServletResponse response)
     {
-        Map<Integer, String> databaseInfoMap = JavelinNotifyListener.getDatabaseNameMap();
+        Map<Integer, String> databaseInfoMap =
+                JavelinNotifyListener.getDatabaseNameMap();
         List<Map<String, String>> resultList = new ArrayList<Map<String, String>>();
 
         for (Map.Entry<Integer, String> databaseInfo : databaseInfoMap.entrySet())

@@ -57,13 +57,13 @@
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/view/resourceMapView.js">
+	src="<%=request.getContextPath()%>/resources/js/map/view/resourceDashboardView.js">
 </script>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/view/resourceMapListView.js">
+	src="<%=request.getContextPath()%>/resources/js/map/view/resourceDashboardListView.js">
 </script>
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/view/resourceMapMenuView.js">
+	src="<%=request.getContextPath()%>/resources/js/map/view/resourceDashboardMenuView.js">
 </script>
 <script type="text/javascript"
 	src="<%=request.getContextPath()%>/resources/js/map/view/shapeView.js">
@@ -97,7 +97,7 @@
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/manager/raphaelMapManager.js">
+	src="<%=request.getContextPath()%>/resources/js/map/manager/raphaelDashboardManager.js">
 </script>
 
 <script type="text/javascript"
@@ -105,19 +105,19 @@
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelMapMoveCommand.js">
+	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelDashboardMoveCommand.js">
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelMapDeleteCommand.js">
+	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelDashboardDeleteCommand.js">
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelMapResizeCommand.js">
+	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelDashboardResizeCommand.js">
 </script>
 
 <script type="text/javascript"
-	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelMapPasteCommand.js">
+	src="<%=request.getContextPath()%>/resources/js/map/command/raphaelDashboardPasteCommand.js">
 </script>
 
 <script type="text/javascript"

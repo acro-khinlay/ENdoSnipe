@@ -35,14 +35,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import jp.co.acroquest.endosnipe.common.util.SQLUtil;
-import jp.co.acroquest.endosnipe.data.entity.MapInfo;
+import jp.co.acroquest.endosnipe.data.entity.DashboardInfo;
 
 /**
- * {@link MapInfo} のための DAO です。
+ * {@link DashboardInfo} のための DAO です。
  *
  * @author fujii
  */
-public class MapInfoDao extends AbstractDao
+public class DashboardInfoDao extends AbstractDao
 {
     private static final String MAP_INFO_TABLE = "MAP_INFO";
     
@@ -57,7 +57,7 @@ public class MapInfoDao extends AbstractDao
      * @param mapInfo 挿入する値
      * @throws SQLException SQL 実行時に例外が発生した場合
      */
-    public static void insert(final String database, MapInfo mapInfo)
+    public static void insert(final String database, DashboardInfo mapInfo)
         throws SQLException
     {
         Connection conn = null;
@@ -90,10 +90,10 @@ public class MapInfoDao extends AbstractDao
      * @return レコードのリスト
      * @throws SQLException SQL 実行時に例外が発生した場合
      */
-    public static List<MapInfo> selectAll(final String database)
+    public static List<DashboardInfo> selectAll(final String database)
         throws SQLException
     {
-        List<MapInfo> result = new ArrayList<MapInfo>();
+        List<DashboardInfo> result = new ArrayList<DashboardInfo>();
         Connection conn = null;
         Statement stmt = null;
         ResultSet rs = null;
@@ -122,16 +122,16 @@ public class MapInfoDao extends AbstractDao
      *
      * @param database データベース名
      * @param mapId マップID
-     * @return {@link MapInfo} オブジェクト
+     * @return {@link DashboardInfo} オブジェクト
      * @throws SQLException SQL 実行時に例外が発生した場合
      */
-    public static MapInfo selectById(final String database, final long mapId)
+    public static DashboardInfo selectById(final String database, final long mapId)
         throws SQLException
     {
         Connection conn = null;
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        MapInfo mapInfo = new MapInfo();
+        DashboardInfo mapInfo = new DashboardInfo();
         try
         {
             conn = getConnection(database, true);
@@ -164,7 +164,7 @@ public class MapInfoDao extends AbstractDao
      * @param mapInfo マップ情報
      * @throws SQLException SQL 実行時に例外が発生した場合
      */
-    public static void update(String database, final MapInfo mapInfo)
+    public static void update(String database, final DashboardInfo mapInfo)
         throws SQLException
     {
         Connection conn = null;
@@ -191,18 +191,18 @@ public class MapInfoDao extends AbstractDao
     }
 
     /**
-     * {@link ResultSet} から {@link MapInfo} のリストを作成します。<br />
+     * {@link ResultSet} から {@link DashboardInfo} のリストを作成します。<br />
      *
-     * @param result {@link MapInfo} オブジェクトの格納先
+     * @param result {@link DashboardInfo} オブジェクトの格納先
      * @param rs {@link ResultSet}
      * @throws SQLException SQL 実行結果取得時に例外が発生した場合
      */
-    private static void getMapInfoFromResultSet(List<MapInfo> result, ResultSet rs)
+    private static void getMapInfoFromResultSet(List<DashboardInfo> result, ResultSet rs)
         throws SQLException
     {
         while (rs.next() == true)
         {
-            MapInfo mapInfo = new MapInfo();
+            DashboardInfo mapInfo = new DashboardInfo();
             // CHECKSTYLE:OFF
             mapInfo.mapId = rs.getInt(1);
             mapInfo.name = rs.getString(2);

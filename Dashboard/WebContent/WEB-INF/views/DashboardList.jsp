@@ -4,13 +4,13 @@
 <html>
 <head>
 <%@ include file="../include/ext/javaScriptInclude.jsp"%>
-<%@ include file="../include/MapListInclude.jsp"%>
+<%@ include file="../include/DashboardListInclude.jsp"%>
 <%@ include file="common/Header.jsp"%>
 <link rel="stylesheet"
 	href="<%=request.getContextPath()%>/resources/css/common/common.css"
 	type="text/css" media="all">
 </head>
-<title>ENdoSnipe Map</title>
+<title>ENdoSnipe Dashboard</title>
 <body id="main" oncontextmenu="return false;" onload="self.focus();">
 	<div id="persArea"></div>
 	<input id="treeData" type="hidden" value='${treeData}' />

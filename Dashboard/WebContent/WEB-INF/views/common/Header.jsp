@@ -13,7 +13,7 @@
 			</td>
 			<td style="float:right;">
 				<a href="<%=request.getContextPath()%>/">Explorer</a>
-				<a href="<%=request.getContextPath()%>/map/mapList">Map</a>
+				<a href="<%=request.getContextPath()%>/map/mapList">Dashboard</a>
 			</td>
 		</tr>
 	</table>
@@ -22,7 +22,7 @@
 	$(".headerTable a").button();
 	$(".ui-button-text").click(function(){
 				if($("#mapMode").val() == ENS.map.mode.EDIT){
-					window.resourceMapListView.saveOperation();
+					window.resourceDashboardListView.saveOperation();
 				}
 			});
 </script>

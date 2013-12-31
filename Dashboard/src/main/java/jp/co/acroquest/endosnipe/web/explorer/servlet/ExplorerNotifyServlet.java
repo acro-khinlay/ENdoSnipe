@@ -100,29 +100,29 @@ public class ExplorerNotifyServlet extends HttpServlet
         String filePath = servletConfig.getInitParameter("collector.property");
 
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_START_AUTO_MEASUREMENT),
-                               new AutoMeasurementStartProcessor());
+                                     new AutoMeasurementStartProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_STOP_AUTO_MEASUREMENT),
-                               new AutoMeasurementStopProcessor());
+                                     new AutoMeasurementStopProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_END_AUTO_MEASUREMENT),
-                               new AutoMeasurementEndProcessor());
+                                     new AutoMeasurementEndProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_NOTIFY_TERM_MEASUREMENT_REQUEST),
-                               new TermMeasurementDataProcessor());
+                                     new TermMeasurementDataProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_START_ALARM_NOTIFY),
-                               new AlarmNotifyStartProcessor());
+                                     new AlarmNotifyStartProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_STOP_ALARM_NOTIFY),
-                               new AlarmNotifyStopProcessor());
+                                     new AlarmNotifyStopProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_TERM_NOTIFY_ALARM_REQUEST),
-                               new TermAlarmNotifyProcessor());
+                                     new TermAlarmNotifyProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_START_RESOURCE_ALARM),
-                               new ResourceAlarmStartProcessor());
+                                     new ResourceAlarmStartProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_STOP_RESOURCE_ALARM),
-                               new ResourceAlarmStopProcessor());
+                                     new ResourceAlarmStopProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_RESOURCE_STATE_ALL_REQUEST),
-                               new ResourceStateAllProcessor());
+                                     new ResourceStateAllProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_AGENT_LIST_REQUEST),
-                               new AgentInformationProcessor());
+                                     new AgentInformationProcessor());
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_GET_AGENT_INFO),
-                               new AgentNotifyProcessor());
+                                     new AgentNotifyProcessor());
 
         // レポート一覧を取得するイベントの処理
         // TODO Report画面用のServletを別に用意したほうがよいか、検討すること
@@ -130,7 +130,7 @@ public class ExplorerNotifyServlet extends HttpServlet
         GetReportListRequestProcessor getReportListReqEvProc = new GetReportListRequestProcessor();
         getReportListReqEvProc.setReportDir(reportDir);
         this.processorMap_.put(Integer.valueOf(EventConstants.EVENT_REPORT_LIST_REQUEST),
-                               getReportListReqEvProc);
+                                     getReportListReqEvProc);
 
         DataBaseConfig dbConfig = null;
         dbConfig = loadConfig(filePath);

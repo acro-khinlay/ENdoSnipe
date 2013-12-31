@@ -49,7 +49,7 @@ public class SummarySignalService
     protected SummarySignalInfoDao summarySignalInfoDao;
 
     /** ロガー。 */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /**
      * コンストラクタ

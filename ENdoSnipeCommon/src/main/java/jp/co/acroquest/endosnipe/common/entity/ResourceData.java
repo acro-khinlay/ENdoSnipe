@@ -51,7 +51,7 @@ public class ResourceData
 
     /** グラフの計測データを格納するマップ(計測項目名、グラフの計測データ) */
     private final Map<String, MeasurementData> measurementMap_ =
-            new LinkedHashMap<String, MeasurementData>();
+        new LinkedHashMap<String, MeasurementData>();
 
     /**
      * {@link ResourceData}オブジェクトに{@link MeasurementData}オブジェクトを登録する。

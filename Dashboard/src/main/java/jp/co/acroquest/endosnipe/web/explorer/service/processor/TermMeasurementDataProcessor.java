@@ -491,7 +491,8 @@ public class TermMeasurementDataProcessor implements EventProcessor
             }
 
             // 値を取得
-            TermMeasurementDetailData detailData = measurementDetailMap.get(measurementItemName);
+            TermMeasurementDetailData detailData =
+                    measurementDetailMap.get(measurementItemName);
             if (detailData == null)
             {
                 detailData = new TermMeasurementDetailData();

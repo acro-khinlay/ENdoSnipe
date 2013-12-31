@@ -69,7 +69,7 @@ public class ReportService
     private static final String REPORT_PATH = "report";
 
     /** ロガー。 */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /** レポート情報Dao */
     @Autowired

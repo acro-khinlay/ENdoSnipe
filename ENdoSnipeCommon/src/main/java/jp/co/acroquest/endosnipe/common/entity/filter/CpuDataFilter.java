@@ -62,17 +62,17 @@ public class CpuDataFilter // extends GraphDataFilter
     /**
      * MeasurementDataから値を変換する。
      * 
-     * @param valuesMap 変換対象の計測データ。
+     * @param valuesDashboard 変換対象の計測データ。
      * @return 変換後のデータ。
      */
-    public GraphResource filter(final List<MeasurementData> valuesMap)
+    public GraphResource filter(final List<MeasurementData> valuesDashboard)
     {
-        if (valuesMap == null || valuesMap.size() == 0)
+        if (valuesDashboard == null || valuesDashboard.size() == 0)
         {
             return null;
         }
 
-        Map<String, MeasurementDetail> detailMap = valuesMap.get(0).getMeasurementDetailMap();
+        Map<String, MeasurementDetail> detailMap = valuesDashboard.get(0).getMeasurementDetailMap();
         MeasurementDetail processorCountObject =
                 detailMap.get(Constants.ITEMNAME_SYSTEM_CPU_PROCESSOR_COUNT);
 
@@ -80,7 +80,7 @@ public class CpuDataFilter // extends GraphDataFilter
         int index = 0;
         if (this.prevCpuTime_ == VALUE_NOT_SET || this.prevUpTime_ == VALUE_NOT_SET)
         {
-            detailMap = valuesMap.get(index).getMeasurementDetailMap();
+            detailMap = valuesDashboard.get(index).getMeasurementDetailMap();
 
             MeasurementDetail cpuTimeObject =
                     detailMap.get(Constants.ITEMNAME_PROCESS_CPU_TOTAL_TIME);
@@ -90,9 +90,9 @@ public class CpuDataFilter // extends GraphDataFilter
             index++;
         }
 
-        while (index < valuesMap.size())
+        while (index < valuesDashboard.size())
         {
-            detailMap = valuesMap.get(index).getMeasurementDetailMap();
+            detailMap = valuesDashboard.get(index).getMeasurementDetailMap();
 
             MeasurementDetail cpuTimeObject =
                     detailMap.get(Constants.ITEMNAME_PROCESS_CPU_TOTAL_TIME);
@@ -102,7 +102,7 @@ public class CpuDataFilter // extends GraphDataFilter
             if (nowUpTime != this.prevUpTime_)
             {
                 long processorCount = Long.valueOf(processorCountObject.value).longValue();
-                long time = valuesMap.get(index).measurementTime.getTime();
+                long time = valuesDashboard.get(index).measurementTime.getTime();
                 double cpuUsage =
                         (nowCpuTime - this.prevCpuTime_)
                         / ((nowUpTime - this.prevUpTime_) * UPTIME_CAL * processorCount);

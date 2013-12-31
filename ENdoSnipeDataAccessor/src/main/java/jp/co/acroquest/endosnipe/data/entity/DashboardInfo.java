@@ -23,41 +23,42 @@
  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  * SOFTWARE.
  ******************************************************************************/
-package jp.co.acroquest.endosnipe.web.explorer.entity;
+package jp.co.acroquest.endosnipe.data.entity;
 
 import java.sql.Timestamp;
 
 /**
- * 
- * @author kawasaki
+ * マップテーブルに対するエンティティクラスです。<br />
+ *
+ * @author fujii
  */
-public class MapInfo
+public class DashboardInfo
 {
 
     /**
-     * マップID
+     * マップを識別する ID 。<br />
      */
-    public long mapId;
+    public long       mapId;
 
     /**
-     * マップ名
+     * マップ名。<br />
      */
-    public String name;
+    public String    name;
 
     /**
-     * データ
+     * マップデータ。<br />
      */
-    public String data;
+    public String    data;
 
     /**
-     * 最終更新日時
+     * マップが更新された最新時刻。<br />
      */
     public Timestamp lastUpdate;
 
     /**
-     * {@link MapInfo}　マップ情報<br />
+     * {@link DashboardInfo} オブジェクトを生成します。<br />
      */
-    public MapInfo()
+    public DashboardInfo()
     {
         this.mapId = -1L;
     }

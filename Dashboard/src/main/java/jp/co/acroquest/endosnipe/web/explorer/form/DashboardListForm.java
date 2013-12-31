@@ -18,7 +18,7 @@ package jp.co.acroquest.endosnipe.web.explorer.form;
  * @author miyasaka
  *
  */
-public class MapListForm
+public class DashboardListForm
 {
     /** マップモード(運用or編集) */
     private String mapMode_;
@@ -32,13 +32,13 @@ public class MapListForm
     /** 選択しているResourceTreeViewのID */
     private String selectedTreeId_;
 
-    /** 選択しているResourceMapListViewのID */
-    private String selectedMapListId_;
+    /** 選択しているResourceDashboardListViewのID */
+    private String selectedDashboardListId_;
 
     /**
      * コンストラクタ。
      */
-    public MapListForm()
+    public DashboardListForm()
     {
 
     }
@@ -48,7 +48,7 @@ public class MapListForm
      * 
      * @return マップモード
      */
-    public String getMapMode()
+    public String getDashboardMode()
     {
         return mapMode_;
     }
@@ -58,7 +58,7 @@ public class MapListForm
      * 
      * @param mapMode マップモード
      */
-    public void setMapMode(final String mapMode)
+    public void setDashboardMode(final String mapMode)
     {
         this.mapMode_ = mapMode;
     }
@@ -124,23 +124,23 @@ public class MapListForm
     }
 
     /**
-     * 選択しているResourceMapListViewのIDを取得する。
+     * 選択しているResourceDashboardListViewのIDを取得する。
      * 
-     * @return 選択しているResourceMapListViewのID
+     * @return 選択しているResourceDashboardListViewのID
      */
-    public String getSelectedMapListId()
+    public String getSelectedDashboardListId()
     {
-        return selectedMapListId_;
+        return selectedDashboardListId_;
     }
 
     /**
-     * 選択しているResourceMapListViewのIDを設定する。
+     * 選択しているResourceDashboardListViewのIDを設定する。
      * 
-     * @param selectedMapListId 選択しているResourceMapListViewのID
+     * @param selectedDashboardListId 選択しているResourceDashboardListViewのID
      */
-    public void setSelectedMapListId(final String selectedMapListId)
+    public void setSelectedDashboardListId(final String selectedDashboardListId)
     {
-        this.selectedMapListId_ = selectedMapListId;
+        this.selectedDashboardListId_ = selectedDashboardListId;
     }
 
 }

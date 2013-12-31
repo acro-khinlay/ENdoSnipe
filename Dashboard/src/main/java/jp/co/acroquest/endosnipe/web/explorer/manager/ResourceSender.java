@@ -178,7 +178,8 @@ public class ResourceSender
                             multiData.setSearchCondition(observateGroupId);
                             multiDataMap.put(observateGroupId, multiData);
                         }
-                        Map<String, String> measurmentDataMap = multiData.getMeasurementValue();
+                        Map<String, String> measurmentDataMap =
+                                multiData.getMeasurementValue();
                         measurmentDataMap.put(measurementItemName, value);
                     }
                 }

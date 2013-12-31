@@ -54,7 +54,7 @@ import org.springframework.stereotype.Service;
 public class TreeMenuService
 {
     /** ロガー。 */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /** ツリー階層の区切り文字 */
     private static final String TREE_SEPARATOR = "/";

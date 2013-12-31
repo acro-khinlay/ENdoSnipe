@@ -33,11 +33,11 @@ import javax.servlet.ServletContext;
 import javax.servlet.http.HttpServletRequest;
 
 import jp.co.acroquest.endosnipe.web.explorer.dto.ResponseDto;
-import jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo;
-import jp.co.acroquest.endosnipe.web.explorer.form.MapListForm;
+import jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo;
+import jp.co.acroquest.endosnipe.web.explorer.form.DashboardListForm;
 import jp.co.acroquest.endosnipe.web.explorer.manager.EventManager;
 import jp.co.acroquest.endosnipe.web.explorer.manager.ResourceSender;
-import jp.co.acroquest.endosnipe.web.explorer.service.MapService;
+import jp.co.acroquest.endosnipe.web.explorer.service.DashboardService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -56,7 +56,7 @@ import org.wgp.manager.WgpDataManager;
  */
 @Controller
 @RequestMapping("/map")
-public class MapController
+public class DashboardController
 {
     /** WGPのデータを扱うクラスのオブジェクト。 */
     @Autowired
@@ -80,38 +80,38 @@ public class MapController
 
     /** マップ機能のサービスクラス。 */
     @Autowired
-    protected MapService mapService_;
+    protected DashboardService mapService_;
 
     /**
      * コンストラクタ。
      */
-    public MapController()
+    public DashboardController()
     {
 
     }
 
     /**
-     * Get Map List.
+     * Get Dashboard List.
      *
      * @param request HTTPサーブレットリクエスト
      * @param mapListForm マップ情報
      * @return 表示するjspファイルの名前
      */
     @RequestMapping(value = "/mapList")
-    public String initializeMapList(final HttpServletRequest request,
-            @ModelAttribute("mapListForm") final MapListForm mapListForm)
+    public String initializeDashboardList(final HttpServletRequest request,
+            @ModelAttribute("mapListForm") final DashboardListForm mapListForm)
     {
         EventManager eventManager = EventManager.getInstance();
         eventManager.setWgpDataManager(wgpDataManager);
         eventManager.setResourceSender(resourceSender);
 
         // マップモードが設定されていない場合は運用モードを設定する。
-        String mapMode = mapListForm.getMapMode();
+        String mapMode = mapListForm.getDashboardMode();
         if (mapMode == null || mapMode.length() == 0)
         {
-            mapListForm.setMapMode(OPERATE_MODE);
+            mapListForm.setDashboardMode(OPERATE_MODE);
         }
-        return "MapList";
+        return "DashboardList";
     }
 
     /**
@@ -131,7 +131,7 @@ public class MapController
     }
 
     /**
-     * Insert Map.
+     * Insert Dashboard.
      *
      * @param data 登録するマップのデータ
      * @param name 登録するマップ名
@@ -142,14 +142,14 @@ public class MapController
     public ResponseDto insert(@RequestParam(value = "data") final String data,
             @RequestParam(value = "name") final String name)
     {
-        MapInfo mapInfo = new MapInfo();
+        DashboardInfo mapInfo = new DashboardInfo();
         mapInfo.data = data;
         mapInfo.name = name;
         return this.mapService_.insert(mapInfo);
     }
 
     /**
-     * Update Map.
+     * Update Dashboard.
      *
      * @param mapId 更新するマップのID
      * @param data 更新するマップのデータ
@@ -162,7 +162,7 @@ public class MapController
             @RequestParam(value = "data") final String data,
             @RequestParam(value = "name") final String name)
     {
-        MapInfo mapInfo = new MapInfo();
+        DashboardInfo mapInfo = new DashboardInfo();
         mapInfo.mapId = Long.valueOf(mapId);
         mapInfo.data = data;
         mapInfo.name = name;
@@ -170,7 +170,7 @@ public class MapController
     }
 
     /**
-     * Get Map.
+     * Get Dashboard.
      *
      * @param mapId 取得するマップのID
      * @return 取得結果
@@ -183,7 +183,7 @@ public class MapController
     }
 
     /**
-     * Remove Map
+     * Remove Dashboard
      * @param mapId Target remove mapId
      * @return 削除結果
      */
@@ -191,7 +191,7 @@ public class MapController
     @ResponseBody
     public ResponseDto removeById(@RequestParam(value = "mapId") final String mapId)
     {
-        return this.mapService_.removeMapById(Long.valueOf(mapId));
+        return this.mapService_.removeDashboardById(Long.valueOf(mapId));
     }
 
     /**

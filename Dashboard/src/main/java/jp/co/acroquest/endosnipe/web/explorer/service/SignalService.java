@@ -47,7 +47,7 @@ public class SignalService
 {
 
     /** ロガー。 */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /**
      * デフォルトのシグナル状態(監視停止中)

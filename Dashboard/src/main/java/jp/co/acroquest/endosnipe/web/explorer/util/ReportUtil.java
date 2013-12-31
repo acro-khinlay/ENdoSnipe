@@ -29,7 +29,7 @@ import jp.co.acroquest.endosnipe.web.explorer.dto.TreeMenuDto;
 import jp.co.acroquest.endosnipe.web.explorer.entity.ReportDefinition;
 import jp.co.acroquest.endosnipe.web.explorer.manager.EventManager;
 import jp.co.acroquest.endosnipe.web.explorer.manager.ResourceSender;
-import jp.co.acroquest.endosnipe.web.explorer.service.MapService;
+import jp.co.acroquest.endosnipe.web.explorer.service.DashboardService;
 
 import org.wgp.manager.WgpDataManager;
 
@@ -45,7 +45,7 @@ public class ReportUtil
     private static final String QUEUE_OFFERED = "DEDC0201";
 
     /** ロガー。 */
-    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(MapService.class);
+    private static final ENdoSnipeLogger LOGGER = ENdoSnipeLogger.getLogger(DashboardService.class);
 
     /** 日付のフォーマット。 */
     private static final String DATE_FORMAT = "yyyy-MM-dd HH:mm:ss";

@@ -14,15 +14,15 @@ package jp.co.acroquest.endosnipe.web.explorer.dao;
 
 import java.util.List;
 
-import jp.co.acroquest.endosnipe.web.explorer.entity.MapInfo;
+import jp.co.acroquest.endosnipe.web.explorer.entity.DashboardInfo;
 
 /**
- * {@link MapInfo} のための DAO のインターフェースです。
+ * {@link DashboardInfo} のための DAO のインターフェースです。
  *
  * @author miyasaka
  *
  */
-public interface MapInfoDao
+public interface DashboardInfoDao
 {
 
     /**
@@ -32,35 +32,35 @@ public interface MapInfoDao
      *
      * @return マップ情報のリスト
      */
-    List<MapInfo> selectAll();
+    List<DashboardInfo> selectAll();
 
     /**
      * マップ情報を取得する。
      * @param mapId マップID
      * @return マップ情報
      */
-    MapInfo selectById(final long mapId);
+    DashboardInfo selectById(final long mapId);
 
     /**
      * マップ情報を取得する。
      * @param name マップ名
      * @return マップ情報
      */
-    List<MapInfo> selectByName(final String name);
+    List<DashboardInfo> selectByName(final String name);
 
     /**
      * マップ情報を新規登録する。<br />
      * @param mapInfo マップ情報
      * @return 登録件数
      */
-    int insert(final MapInfo mapInfo);
+    int insert(final DashboardInfo mapInfo);
 
     /**
      * マップ情報を更新する。
      * @param mapInfo マップ情報
      * @return 更新件数
      */
-    int update(final MapInfo mapInfo);
+    int update(final DashboardInfo mapInfo);
 
     /**
      * マップ情報を削除する。
